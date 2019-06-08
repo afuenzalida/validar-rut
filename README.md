@@ -8,16 +8,17 @@ Instala el paquete en tu proyecto:
 ```
 npm install validar-rut
 ```
-Importa la librería y utiliza su método de validación:
+Importa la librería y utiliza su método **validar**:
 ```javascript
 const rut = require('validar-rut')
 
-// Considerando el siguiente RUT válido como ejemplo: 12.345.678-5
-console.log(rut.validar(123456785));
+// Los siguientes RUT devolverán 'true'
+rut.validar(123456785);
+rut.validar('123456785');
+rut.validar('12.345.678-5');
 ```
-La función retornará **true** o **false**.
+En caso de que el RUT sea inválido, la función retornará **false**.
 
-### Limitaciones
+### Cambios
 
-+ El RUT debe ser ingresado en formato númerico o texto.
-+ El RUT debe estar sin puntos ni guión.
++ 1.1.0: Ahora el RUT también puede ser ingresado con puntos y guión.

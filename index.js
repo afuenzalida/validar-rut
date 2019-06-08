@@ -6,7 +6,7 @@ https://github.com/a-fuenzalida
 exports.validar = (valor) => {
   const secuencia = [2, 3, 4, 5, 6, 7];
   if (typeof valor === 'string' || typeof valor === 'number') {
-    let rutCompleto = (typeof valor === 'number' ? valor.toString() : valor).split("");
+    let rutCompleto = (typeof valor === 'number' ? valor.toString() : valor).split("").filter(v => v !== '.' && v !== '-');
     let rut = rutCompleto.slice(0, -1).reverse();
     let dv = rutCompleto.pop()
     let acum = 0;
