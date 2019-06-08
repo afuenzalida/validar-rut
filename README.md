@@ -10,12 +10,13 @@ npm install validar-rut
 ```
 Importa la librería y utiliza su método **validar**:
 ```javascript
-const rut = require('validar-rut')
+const { validar } = require('validar-rut')
 
-// Los siguientes RUT devolverán 'true'
-rut.validar(123456785);
-rut.validar('123456785');
-rut.validar('12.345.678-5');
+// El RUT devolverá 'true' en los siguientes formatos:
+validar(123456785);
+validar('123456785');
+validar('12345678-5');
+validar('12.345.678-5');
 ```
 En caso de que el RUT sea inválido, la función retornará **false**.
 
