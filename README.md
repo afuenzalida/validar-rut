@@ -35,10 +35,10 @@ const { calcularDv } = require('validar-rut')
 
 ```javascript
 // Se devolverá el digito verificador en formato string:
-validarRUT(23231069); // -> "3"
-validarRUT('12345678'); // -> "5"
-validarRUT('20.102.545'); // -> "1"
-validarRUT('19.390.761'); // -> "k"
+calcularDv(23231069); // -> "3"
+calcularDv('12345678'); // -> "5"
+calcularDv('20.102.545'); // -> "1"
+calcularDv('19.390.761'); // -> "k"
 ```
 
 ## Cambios
