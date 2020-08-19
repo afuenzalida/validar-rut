@@ -44,4 +44,4 @@ validarRUT('19.390.761'); // -> "k"
 ## Cambios
 
 + 1.1.0: Ahora el RUT también puede ser ingresado con puntos y guión.
-+ 1.2.0: Se agregó función para calcular el digito verificador.
++ 2.0.0: Se agregó función para calcular el digito verificador.
