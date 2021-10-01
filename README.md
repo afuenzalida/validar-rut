@@ -1,47 +1,43 @@
 # Validar RUT
 
-Librería con herramientas para el cálculo de digito verificador y validación del RUT chileno.
+Librería con herramientas para el RUT chileno.
 
-Puede leer RUT de tipo integer y string. Limpiará todos los caracteres que no sean alfanuméricos.
+Incluye:
+* Validación de RUT
+* Limpieza de carácteres no alfanuméricos del RUT.
+* Obtención de dígito verificador.
+* Generador de RUTS aleatorios.
 
-## Uso
+## ¿Cómo comenzar?
 
-Instala el paquete en tu proyecto:
+#### 1. Instala la librería en tu proyecto
 ```
-npm install validar-rut
+npm i validar-rut
 ```
 
-#### Función **validarRUT**:
+#### 2. Importa la librería
 
+ES6:
 ```javascript
-const { validarRUT } = require('validar-rut')
+import { validateRUT, getCheckDigit, generateRandomRUT } from 'validar-rut'
 ```
 
+CommonJS:
 ```javascript
-// El RUT devolverá 'true' en los siguientes formatos:
-validarRUT(123456785);
-validarRUT('123456785');
-validarRUT('12345678-5');
-validarRUT('12.345.678-5');
+const { validateRUT, getCheckDigit, generateRandomRUT } = require('validar-rut')
 ```
 
-En caso de que el RUT sea inválido, la función retornará **false**.
-
-#### Función **calcularDv**:
-
-```javascript
-const { calcularDv } = require('validar-rut')
-```
-
-```javascript
-// Se devolverá el digito verificador en formato string:
-calcularDv(23231069); // -> "3"
-calcularDv('12345678'); // -> "5"
-calcularDv('20.102.545'); // -> "1"
-calcularDv('19.390.761'); // -> "k"
-```
+## Funciones
+Lista de funciones disponibles
+Función | Descripción
+--------------------------------------- | --------------------------------------
+**validateRUT(rut: string\|number)** | Valida el RUT ingresado. Retorna `true` o `false` dependiendo del resultado.
+**getCheckDigit(rut: string\|number)** | Retorna el dígito verificador del RUT ingresado.
+**clearRUT(rut: string)** | Limpia todos los caracteres no-alfanuméricos del RUT y lo retorna.
+**generateRandomRUT(amount: int, dots: boolean, hyphen: boolean)** | Obtiene uno o una lista (según el valor de `amount`) de RUTS válidos generados aleatoriamente. Se puede configurar el resultado (opciones en `false` por defecto): <br/><br/>`dots`: Si quieres que incluya puntos puntos<br/>`hyphen`: Si quieres que incluya un guión antes del dígito verificador.
 
 ## Cambios
 
-+ 1.1.0: Ahora el RUT también puede ser ingresado con puntos y guión.
-+ 2.0.0: Se agregó función para calcular el digito verificador.
++ **1.1.0**: Ahora el RUT también puede ser ingresado con puntos y guión.
++ **2.0.0**: Se agregó función para calcular el digito verificador.
++ **3.0.0**: Se agregaron versiones optimizadas de las funciones existentes con nombres en inglés. Se agregó la función `generateRandomRUT()` para obtener uno o más RUT aleatorios. (Las funciones con nombre en español siguen estando disponibles, pero están deprecadas)
