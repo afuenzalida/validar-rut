@@ -56,7 +56,7 @@ function clearRUT(rut) {
 function generateRandomRUT(amount = 1, dots = false, hyphen = false) {
   const generatedRUTs = [...Array(amount).keys()].map(() => {
     const rut = Math.floor(1000000 + Math.random() * 30000000)
-    return `${dots ? rut.toLocaleString() : rut}${hyphen ? '-' : ''}${getCheckDigit(rut)}`
+    return `${dots ? rut.toLocaleString("es-CL") : rut}${hyphen ? '-' : ''}${getCheckDigit(rut)}`
   })
 
   return amount === 1 ? generatedRUTs[0] : generatedRUTs
