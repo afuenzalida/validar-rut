@@ -36,7 +36,9 @@ function validateRUT(rut) {
     result += reversedRUT[i] * j;
   }
 
-  return (11 - (result % 11)) <= 9 ? String((11 - (result % 11))) : 'K'
+  const value  = (11 - (result % 11)) % 11
+
+  return (value) <= 9 ? String(value) : 'K'
 }
 
 /**
