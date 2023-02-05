@@ -30,6 +30,10 @@ test('validateRUT returns true on value "15.512.458-K"', () => {
   expect(validateRUT("15.512.458-K")).toBe(true)
 })
 
+test('validateRUT returns true on value "99.511.620-0"', () => {
+  expect(validateRUT("99.511.620-0")).toBe(true)
+})
+
 test('validateRUT returns false on value 123456789', () => {
   expect(validateRUT(123456789)).toBe(false)
 })
